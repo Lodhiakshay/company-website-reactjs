@@ -1,0 +1,99 @@
+# Node / dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Build output
+build/         # Create React App
+dist/          # Vite / other bundlers
+out/           # optional
+coverage/      # test coverage
+
+# Environment files (do NOT commit secrets)
+.env
+.env.*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors/IDEs
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# JetBrains
+*.iml
+out/
+
+# Mac/Windows swapfiles
+*.swp
+*~
+
+# Temporary files
+tmp/
+temp/
+.cache/
+.cache-loader/
+.logs/
+
+# Parcel / Metro / other caches
+.cache/
+.parcel-cache/
+.rnx-cache/
+.expo/
+
+# TypeScript build
+*.tsbuildinfo
+
+# Optional: lockfiles (usually you should commit lockfiles; comment out if you want to ignore)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Testing
+jest.config.js.snap
+coverage/
+
+# Misc
+*.pem
+*.key
+
+# Docker
+docker-compose.override.yml
+.env.docker
+
+# Optional for git hooks and husky
+.husky/_/
+.husky/*.log
+
+# Secrets (double safety)
+secrets.json
+
+# If you use Storybook
+.storybook/build
+out-storybook/
+
+# If you use Next.js (remove if not used)
+# .next/
+# .vercel/
+
+# If you use Gatsby (remove if not used)
+# .cache/
+# public/
+
+# If you use expo
+# .expo/
