@@ -1,6 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
-import { Badge } from './ui/badge';
 import { 
   Code, 
   Smartphone, 
@@ -20,7 +19,7 @@ import {
   DollarSign
 } from 'lucide-react';
 import { useData } from '../contexts/DataContext';
-import { LoadingSpinner, SectionSkeleton } from './LoadingSpinner';
+import { SectionSkeleton } from './LoadingSpinner';
 import { useState } from 'react';
 
 // Icon mapping for dynamic icons
@@ -64,90 +63,90 @@ export function ServicesSection() {
 
   const getColorClasses = (color: string) => {
     const colorMap = {
-      blue: {
-        gradient: 'from-blue-500 to-blue-600',
-        lightGradient: 'from-blue-50 to-blue-100 dark:from-blue-950/50 dark:to-blue-900/50',
-        border: 'border-blue-200/50 dark:border-blue-800/50',
-        hoverBorder: 'hover:border-blue-300 dark:hover:border-blue-700',
-        icon: 'text-blue-600 dark:text-blue-400',
-        iconBg: 'bg-blue-100 dark:bg-blue-900/50',
-        shadow: 'shadow-blue-100/50 dark:shadow-blue-900/20',
-        accent: 'bg-blue-500',
-        text: 'text-blue-600 dark:text-blue-400'
-      },
-      purple: {
-        gradient: 'from-purple-500 to-purple-600',
-        lightGradient: 'from-purple-50 to-purple-100 dark:from-purple-950/50 dark:to-purple-900/50',
-        border: 'border-purple-200/50 dark:border-purple-800/50',
-        hoverBorder: 'hover:border-purple-300 dark:hover:border-purple-700',
-        icon: 'text-purple-600 dark:text-purple-400',
-        iconBg: 'bg-purple-100 dark:bg-purple-900/50',
-        shadow: 'shadow-purple-100/50 dark:shadow-purple-900/20',
-        accent: 'bg-purple-500',
-        text: 'text-purple-600 dark:text-purple-400'
-      },
-      green: {
-        gradient: 'from-green-500 to-green-600',
-        lightGradient: 'from-green-50 to-green-100 dark:from-green-950/50 dark:to-green-900/50',
-        border: 'border-green-200/50 dark:border-green-800/50',
-        hoverBorder: 'hover:border-green-300 dark:hover:border-green-700',
-        icon: 'text-green-600 dark:text-green-400',
-        iconBg: 'bg-green-100 dark:bg-green-900/50',
-        shadow: 'shadow-green-100/50 dark:shadow-green-900/20',
-        accent: 'bg-green-500',
-        text: 'text-green-600 dark:text-green-400'
-      },
-      red: {
-        gradient: 'from-red-500 to-red-600',
-        lightGradient: 'from-red-50 to-red-100 dark:from-red-950/50 dark:to-red-900/50',
-        border: 'border-red-200/50 dark:border-red-800/50',
-        hoverBorder: 'hover:border-red-300 dark:hover:border-red-700',  
-        icon: 'text-red-600 dark:text-red-400',
-        iconBg: 'bg-red-100 dark:bg-red-900/50',
-        shadow: 'shadow-red-100/50 dark:shadow-red-900/20',
-        accent: 'bg-red-500',
-        text: 'text-red-600 dark:text-red-400'
-      },
-      orange: {
-        gradient: 'from-orange-500 to-orange-600',
-        lightGradient: 'from-orange-50 to-orange-100 dark:from-orange-950/50 dark:to-orange-900/50',
-        border: 'border-orange-200/50 dark:border-orange-800/50',
-        hoverBorder: 'hover:border-orange-300 dark:hover:border-orange-700',
-        icon: 'text-orange-600 dark:text-orange-400',
-        iconBg: 'bg-orange-100 dark:bg-orange-900/50',
-        shadow: 'shadow-orange-100/50 dark:shadow-orange-900/20',
-        accent: 'bg-orange-500',
-        text: 'text-orange-600 dark:text-orange-400'
-      },
-      pink: {
-        gradient: 'from-pink-500 to-pink-600',
-        lightGradient: 'from-pink-50 to-pink-100 dark:from-pink-950/50 dark:to-pink-900/50',
-        border: 'border-pink-200/50 dark:border-pink-800/50',
-        hoverBorder: 'hover:border-pink-300 dark:hover:border-pink-700',
-        icon: 'text-pink-600 dark:text-pink-400',
-        iconBg: 'bg-pink-100 dark:bg-pink-900/50',
-        shadow: 'shadow-pink-100/50 dark:shadow-pink-900/20',
-        accent: 'bg-pink-500',
-        text: 'text-pink-600 dark:text-pink-400'
-      }
-    };
+    blue: {
+      gradient: 'from-blue-500 to-blue-600',
+      lightGradient: 'from-blue-50 to-blue-100 dark:from-blue-950/50 dark:to-blue-900/50',
+      border: 'border-blue-200/50 dark:border-blue-800/50',
+      hoverBorder: 'hover:border-blue-300 dark:hover:border-blue-700',
+      icon: 'text-blue-600 dark:text-blue-400',
+      iconBg: 'bg-blue-100 dark:bg-blue-900/50',
+      shadow: 'shadow-blue-100/50 dark:shadow-blue-900/20',
+      accent: 'bg-blue-500',
+      text: 'text-blue-600 dark:text-blue-400'
+    },
+    purple: {
+      gradient: 'from-purple-500 to-purple-600',
+      lightGradient: 'from-purple-50 to-purple-100 dark:from-purple-950/50 dark:to-purple-900/50',
+      border: 'border-purple-200/50 dark:border-purple-800/50',
+      hoverBorder: 'hover:border-purple-300 dark:hover:border-purple-700',
+      icon: 'text-purple-600 dark:text-purple-400',
+      iconBg: 'bg-purple-100 dark:bg-purple-900/50',
+      shadow: 'shadow-purple-100/50 dark:shadow-purple-900/20',
+      accent: 'bg-purple-500',
+      text: 'text-purple-600 dark:text-purple-400'
+    },
+    green: {
+      gradient: 'from-green-500 to-green-600',
+      lightGradient: 'from-green-50 to-green-100 dark:from-green-950/50 dark:to-green-900/50',
+      border: 'border-green-200/50 dark:border-green-800/50',
+      hoverBorder: 'hover:border-green-300 dark:hover:border-green-700',
+      icon: 'text-green-600 dark:text-green-400',
+      iconBg: 'bg-green-100 dark:bg-green-900/50',
+      shadow: 'shadow-green-100/50 dark:shadow-green-900/20',
+      accent: 'bg-green-500',
+      text: 'text-green-600 dark:text-green-400'
+    },
+    red: {
+      gradient: 'from-red-500 to-red-600',
+      lightGradient: 'from-red-50 to-red-100 dark:from-red-950/50 dark:to-red-900/50',
+      border: 'border-red-200/50 dark:border-red-800/50',
+      hoverBorder: 'hover:border-red-300 dark:hover:border-red-700',  
+      icon: 'text-red-600 dark:text-red-400',
+      iconBg: 'bg-red-100 dark:bg-red-900/50',
+      shadow: 'shadow-red-100/50 dark:shadow-red-900/20',
+      accent: 'bg-red-500',
+      text: 'text-red-600 dark:text-red-400'
+    },
+    orange: {
+      gradient: 'from-orange-500 to-orange-600',
+      lightGradient: 'from-orange-50 to-orange-100 dark:from-orange-950/50 dark:to-orange-900/50',
+      border: 'border-orange-200/50 dark:border-orange-800/50',
+      hoverBorder: 'hover:border-orange-300 dark:hover:border-orange-700',
+      icon: 'text-orange-600 dark:text-orange-400',
+      iconBg: 'bg-orange-100 dark:bg-orange-900/50',
+      shadow: 'shadow-orange-100/50 dark:shadow-orange-900/20',
+      accent: 'bg-orange-500',
+      text: 'text-orange-600 dark:text-orange-400'
+    },
+    pink: {
+      gradient: 'from-pink-500 to-pink-600',
+      lightGradient: 'from-pink-50 to-pink-100 dark:from-pink-950/50 dark:to-pink-900/50',
+      border: 'border-pink-200/50 dark:border-pink-800/50',
+      hoverBorder: 'hover:border-pink-300 dark:hover:border-pink-700',
+      icon: 'text-pink-600 dark:text-pink-400',
+      iconBg: 'bg-pink-100 dark:bg-pink-900/50',
+      shadow: 'shadow-pink-100/50 dark:shadow-pink-900/20',
+      accent: 'bg-pink-500',
+      text: 'text-pink-600 dark:text-pink-400'
+    }
+  };
     return colorMap[color] || colorMap.blue;
   };
 
   const ServiceCard = ({ service, featured = false, isPopular = false }) => {
     const colors = getColorClasses(service.color);
-    const IconComponent = iconMap[service.icon] || Code;
+    const IconComponent = iconMap[service.icon as keyof typeof iconMap] || Code;
     const isHovered = hoveredService === service.id;
 
     return (
       <Card 
-        className={`group relative overflow-hidden border-2 ${colors.border} ${colors.hoverBorder} transition-all duration-500 hover:shadow-2xl ${colors.shadow} transform hover:-translate-y-3 ${isPopular ? 'ring-2 ring-purple-200 dark:ring-purple-800 scale-105' : ''} ${featured ? 'md:col-span-2 lg:col-span-1' : ''} bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm`}
+        className={`p-4 group relative overflow-hidden border-2 ${colors.border} ${colors.hoverBorder} transition-all duration-500 hover:shadow-2xl ${colors.shadow} transform hover:-translate-y-3 ${isPopular ? 'ring-2 ring-purple-200 dark:ring-purple-800' : ''} ${featured ? 'md:col-span-2 lg:col-span-1' : ''} bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm`}
         onMouseEnter={() => setHoveredService(service.id)}
         onMouseLeave={() => setHoveredService(null)}
       >
         {/* Popular/Featured Badge */}
         {isPopular && (
-          <div className="absolute -top-2 -right-2 z-10">
+          <div className="absolute -top-1 -right-2 z-10">
             <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-1 rounded-full text-xs font-medium shadow-lg flex items-center gap-1 animate-pulse">
               <Star className="w-3 h-3 fill-current" />
               Most Popular

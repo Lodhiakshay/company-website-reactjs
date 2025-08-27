@@ -67,7 +67,7 @@ export function CareerSection() {
   };
 
   const CareerCard = ({ career, featured = false }) => (
-    <Card className={`group overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 ${featured ? 'ring-2 ring-blue-200 dark:ring-blue-800 border-blue-200 dark:border-blue-800' : 'border-border/50 hover:border-blue-300 dark:hover:border-blue-700'} bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm relative`}>
+    <Card className={`p-4 group overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 ${featured ? 'ring-2 ring-blue-200 dark:ring-blue-800 border-blue-200 dark:border-blue-800' : 'border-border/50 hover:border-blue-300 dark:hover:border-blue-700'} bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm relative`}>
       {featured && (
         <div className="absolute -top-2 -right-2 z-10">
           <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-1 rounded-full text-xs font-medium shadow-lg flex items-center gap-1 animate-pulse">

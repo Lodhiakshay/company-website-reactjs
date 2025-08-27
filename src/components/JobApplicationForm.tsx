@@ -4,7 +4,7 @@ import { Button } from './ui/button';
 import { Progress } from './ui/progress';
 import { CheckCircle, Loader2, Send } from 'lucide-react';
 import { useData } from '../contexts/DataContext';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { ApplicationData, INITIAL_APPLICATION_DATA } from './forms/types';
 import { PersonalInfoStep } from './forms/PersonalInfoStep';
 import { ExperienceStep } from './forms/ExperienceStep';
