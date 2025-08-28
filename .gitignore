@@ -4,6 +4,7 @@ node_modules/
 .pnp.js
 
 # Build output
+dist
 build/         # Create React App
 dist/          # Vite / other bundlers
 out/           # optional

@@ -292,10 +292,10 @@ export const getMockData = async (): Promise<Omit<WebsiteData, 'loading' | 'erro
     leadership: [
       {
         id: '1',
-        name: 'Robert Anderson',
+        name: 'Kapil Patel',
         position: 'Chief Executive Officer',
         bio: 'Visionary leader with 20+ years of experience in technology and business transformation. Robert has successfully scaled multiple tech companies from startup to IPO, with expertise in strategic planning, market expansion, and building high-performance teams.',
-        image: 'https://images.unsplash.com/photo-1705234384669-c6d31c61b789?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+        image: 'https://media.licdn.com/dms/image/v2/D4D03AQGZcY4g8GTmbQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1687783753101?e=1759363200&v=beta&t=6xkEaYpqBMBuClNoId5mVa-10ek6POvwjM_ZsLhXJUE',
         experience: '20+ years',
         achievements: [
           'Led 3 successful IPOs',
@@ -304,18 +304,18 @@ export const getMockData = async (): Promise<Omit<WebsiteData, 'loading' | 'erro
           'Built teams of 500+ employees'
         ],
         socialLinks: {
-          linkedin: 'https://linkedin.com',
+          linkedin: 'https://www.linkedin.com/in/kapil-patel-344118107/',
           twitter: 'https://twitter.com',
-          email: 'robert@techflow.com'
+          email: 'kapil@yopmail.com'
         },
         isActive: true
       },
       {
         id: '2',
-        name: 'Dr. Lisa Chen',
+        name: 'Rahul Kumar',
         position: 'Chief Technology Officer',
         bio: 'Technology visionary and former MIT professor with deep expertise in AI, machine learning, and distributed systems. Dr. Chen holds 15 patents and has published over 50 research papers in top-tier technology journals.',
-        image: 'https://images.unsplash.com/photo-1736939678218-bd648b5ef3bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+        image: 'https://media.licdn.com/dms/image/v2/C5103AQE8GMzCXcIXvQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1520362276578?e=1759363200&v=beta&t=TU2bUh_fduB87U9sPbMulUqkXJ4seqnjaww5t_mldBs',
         experience: '18+ years',
         achievements: [
           'PhD in Computer Science from MIT',
@@ -324,18 +324,18 @@ export const getMockData = async (): Promise<Omit<WebsiteData, 'loading' | 'erro
           'Former Google Principal Engineer'
         ],
         socialLinks: {
-          linkedin: 'https://linkedin.com',
+          linkedin: 'https://www.linkedin.com/in/rajlodhi/',
           twitter: 'https://twitter.com',
-          email: 'lisa@techflow.com'
+          email: 'rahul@yopmail.com'
         },
         isActive: true
       },
       {
         id: '3',
-        name: 'James Wilson',
+        name: 'Akshay Kumar',
         position: 'Chief Operating Officer',
         bio: 'Operations expert with extensive experience in scaling technology companies and optimizing business processes. James has a proven track record of improving operational efficiency by 300% while maintaining quality standards.',
-        image: 'https://images.unsplash.com/photo-1584940120505-117038d90b05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+        image: 'https://media.licdn.com/dms/image/v2/D4D03AQGZCod-YUtaGg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1691758471230?e=1759363200&v=beta&t=9XTVS7ywtAB7_1t7ndz6tFPJfxRCxRRD3Sr_RypAHHg',
         experience: '16+ years',
         achievements: [
           'MBA from Stanford Business School',
@@ -344,17 +344,17 @@ export const getMockData = async (): Promise<Omit<WebsiteData, 'loading' | 'erro
           'Certified Six Sigma Black Belt'
         ],
         socialLinks: {
-          linkedin: 'https://linkedin.com',
-          email: 'james@techflow.com'
+          linkedin: 'https://www.linkedin.com/in/akshay-kumar-0ba28b18b/',
+          email: 'akshay@yopmail.com'
         },
         isActive: true
       },
       {
         id: '4',
-        name: 'Maria Rodriguez',
+        name: 'Manoj Kumar',
         position: 'Chief Financial Officer',
         bio: 'Financial strategist with expertise in scaling tech companies, venture capital, and strategic partnerships. Maria has raised over $200M in funding and led financial operations for multiple successful exits.',
-        image: 'https://images.unsplash.com/photo-1677594333719-c5eb422bbdc9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+        image: 'https://avatars.githubusercontent.com/u/100769618?v=4',
         experience: '15+ years',
         achievements: [
           'CPA and CFA certifications',
@@ -363,9 +363,9 @@ export const getMockData = async (): Promise<Omit<WebsiteData, 'loading' | 'erro
           'Former Goldman Sachs VP'
         ],
         socialLinks: {
-          linkedin: 'https://linkedin.com',
+          linkedin: 'https://www.linkedin.com/in/manoj-kumar-88134659/',
           twitter: 'https://twitter.com',
-          email: 'maria@techflow.com'
+          email: 'manoj@yopmail.com'
         },
         isActive: true
       }
@@ -607,11 +607,11 @@ export const getMockData = async (): Promise<Omit<WebsiteData, 'loading' | 'erro
       phone: '+1 (555) 123-4567',
       email: 'hello@techflow.com',
       socialLinks: {
-        linkedin: 'https://linkedin.com/company/techflow',
-        twitter: 'https://twitter.com/techflow',
-        facebook: 'https://facebook.com/techflow',
-        github: 'https://github.com/techflow',
-        instagram: 'https://instagram.com/techflow'
+        linkedin: 'https://www.linkedin.com/in/akshay-kumar-0ba28b18b/',
+        twitter: 'https://twitter.com',
+        facebook: 'https://facebook.com',
+        github: 'https://github.com',
+        instagram: 'https://instagram.com'
       },
       businessHours: {
         monday: '9:00 AM - 6:00 PM PST',
