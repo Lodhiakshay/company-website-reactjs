@@ -17,6 +17,7 @@ import { LoadingSpinner } from './components/LoadingSpinner';
 import { useData } from './contexts/DataContext';
 import { Button } from './components/ui/button';
 import { RefreshCw } from 'lucide-react';
+import { Toaster } from 'sonner';
 
 function AppContent() {
   const { loading, error, refreshData } = useData();
@@ -75,6 +76,7 @@ function AppContent() {
         <ContactSection />
       </main>
       <Footer />
+      <Toaster position="top-right" richColors duration={4000} className="z-[99999]" />
     </div>
   );
 }

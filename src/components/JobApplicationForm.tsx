@@ -2,9 +2,8 @@ import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
 import { Button } from './ui/button';
 import { Progress } from './ui/progress';
-import { CheckCircle, Loader2, Send } from 'lucide-react';
+import { CheckCircle, Loader2, Send, AlertCircle } from 'lucide-react';
 import { useData } from '../contexts/DataContext';
-import { toast } from 'sonner';
 import { ApplicationData, INITIAL_APPLICATION_DATA } from './forms/types';
 import { PersonalInfoStep } from './forms/PersonalInfoStep';
 import { ExperienceStep } from './forms/ExperienceStep';
@@ -17,6 +16,8 @@ interface JobApplicationFormProps {
   children: React.ReactNode;
 }
 
+type FormMessage = { type: 'error' | 'success'; text: string } | null;
+
 export function JobApplicationForm({ jobId, jobTitle, children }: JobApplicationFormProps) {
   const { submitJobApplication } = useData();
   const [open, setOpen] = useState(false);
@@ -27,18 +28,28 @@ export function JobApplicationForm({ jobId, jobTitle, children }: JobApplication
 
   const [applicationData, setApplicationData] = useState<ApplicationData>(INITIAL_APPLICATION_DATA);
 
+  // Inline form message state (replaces global toasts for this dialog)
+  const [formMessage, setFormMessage] = useState<FormMessage>(null);
+
+  const showFormMessage = (msg: FormMessage, duration = 3500) => {
+    setFormMessage(msg);
+    if (msg) {
+      window.setTimeout(() => setFormMessage(null), duration);
+    }
+  };
+
   const handleFileUpload = (file: File, type: 'resume' | 'coverLetter' | 'portfolio') => {
     if (file.size > 5 * 1024 * 1024) {
-      toast.error('File size must be less than 5MB');
+      showFormMessage({ type: 'error', text: 'File size must be less than 5MB' });
       return;
     }
-    
+
     setApplicationData(prev => ({
       ...prev,
       documents: { ...prev.documents, [type]: file }
     }));
-    
-    toast.success(`${type} uploaded successfully`);
+
+    showFormMessage({ type: 'success', text: `${type} uploaded successfully` });
   };
 
   const removeFile = (type: 'resume' | 'coverLetter' | 'portfolio') => {
@@ -46,6 +57,7 @@ export function JobApplicationForm({ jobId, jobTitle, children }: JobApplication
       ...prev,
       documents: { ...prev.documents, [type]: undefined }
     }));
+    showFormMessage({ type: 'success', text: `${type} removed` });
   };
 
   const validateStep = (step: number): boolean => {
@@ -79,29 +91,31 @@ export function JobApplicationForm({ jobId, jobTitle, children }: JobApplication
   const nextStep = () => {
     if (validateStep(currentStep)) {
       setCurrentStep(prev => Math.min(prev + 1, totalSteps));
+      setFormMessage(null);
     } else {
-      toast.error('Please fill in all required fields');
+      showFormMessage({ type: 'error', text: 'Please fill in all required fields' });
     }
   };
 
   const prevStep = () => {
     setCurrentStep(prev => Math.max(prev - 1, 1));
+    setFormMessage(null);
   };
 
   const handleSubmit = async () => {
     if (!validateStep(4)) {
-      toast.error('Please fill in all required fields');
+      showFormMessage({ type: 'error', text: 'Please fill in all required fields' });
       return;
     }
 
     setIsSubmitting(true);
-    
+
     try {
       await submitJobApplication(jobId, applicationData);
       setSubmitted(true);
-      toast.success('Application submitted successfully!');
+      showFormMessage({ type: 'success', text: 'Application submitted successfully!' }, 3000);
     } catch (error) {
-      toast.error('Failed to submit application. Please try again.');
+      showFormMessage({ type: 'error', text: 'Failed to submit application. Please try again.' });
     } finally {
       setIsSubmitting(false);
     }
@@ -111,6 +125,7 @@ export function JobApplicationForm({ jobId, jobTitle, children }: JobApplication
     setCurrentStep(1);
     setSubmitted(false);
     setApplicationData(INITIAL_APPLICATION_DATA);
+    setFormMessage(null);
   };
 
   if (submitted) {
@@ -139,7 +154,7 @@ export function JobApplicationForm({ jobId, jobTitle, children }: JobApplication
   }
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog open={open} onOpenChange={(val) => { setOpen(val); if (!val) setFormMessage(null); }}>
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
@@ -149,6 +164,26 @@ export function JobApplicationForm({ jobId, jobTitle, children }: JobApplication
             <span className="text-sm text-muted-foreground">Step {currentStep} of {totalSteps}</span>
           </div>
         </DialogHeader>
+
+        {/* Inline form message (shows inside the dialog, below header) */}
+        {formMessage && (
+          <div
+            className={`max-w-2xl mx-auto mt-4 p-3 rounded-md border ${
+              formMessage.type === 'error'
+                ? 'bg-red-50 border-red-200 text-red-800'
+                : 'bg-green-50 border-green-200 text-green-800'
+            } flex items-start gap-3`}
+          >
+            <div className="mt-0.5">
+              {formMessage.type === 'error' ? (
+                <AlertCircle className="w-5 h-5" />
+              ) : (
+                <CheckCircle className="w-5 h-5" />
+              )}
+            </div>
+            <div className="text-sm">{formMessage.text}</div>
+          </div>
+        )}
 
         <div className="py-6">
           {currentStep === 1 && (

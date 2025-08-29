@@ -26,7 +26,7 @@ export function QuestionsStep({
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 max-w-2xl mx-auto p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md transition-all duration-300">
       <div className="flex items-center gap-3 mb-6">
         <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900/50 rounded-lg flex items-center justify-center">
           <FileText className="w-5 h-5 text-orange-600 dark:text-orange-400" />
@@ -44,7 +44,7 @@ export function QuestionsStep({
           value={questions.whyInterested}
           onChange={(e) => updateQuestion('whyInterested', e.target.value)}
           placeholder="Tell us what attracts you to this role and how it aligns with your career goals..."
-          className="mt-2 min-h-[100px]"
+          className="mt-2 min-h-[100px] resize-y"
         />
       </div>
 
@@ -55,7 +55,7 @@ export function QuestionsStep({
           value={questions.whyCompany}
           onChange={(e) => updateQuestion('whyCompany', e.target.value)}
           placeholder="What about our company culture, mission, or values resonates with you..."
-          className="mt-2 min-h-[100px]"
+          className="mt-2 min-h-[100px] resize-y"
         />
       </div>
 
@@ -66,7 +66,7 @@ export function QuestionsStep({
           value={questions.experience}
           onChange={(e) => updateQuestion('experience', e.target.value)}
           placeholder="Share specific examples of your work that demonstrate your qualifications for this role..."
-          className="mt-2 min-h-[100px]"
+          className="mt-2 min-h-[100px] resize-y"
         />
       </div>
 

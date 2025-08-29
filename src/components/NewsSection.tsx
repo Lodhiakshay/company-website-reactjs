@@ -78,7 +78,7 @@ export function NewsSection() {
     return (
       <Card className={`group overflow-hidden border-2 border-border/50 hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-100/50 dark:hover:shadow-blue-900/20 transform hover:-translate-y-2 ${featured ? 'ring-2 ring-blue-200 dark:ring-blue-800' : ''} bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm`}>
         {featured && (
-          <div className="absolute top-4 left-4 z-10 flex items-center gap-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-medium shadow-lg">
+          <div className="absolute -top-1 -left-2 z-10 flex items-center gap-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-medium shadow-lg">
             <Star className="w-3 h-3 fill-current" />
             Featured
           </div>

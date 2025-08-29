@@ -21,7 +21,7 @@ export function FileUploadCard({
   onFileRemove 
 }: FileUploadCardProps) {
   return (
-    <Card className="border-2 border-dashed border-border hover:border-blue-300 dark:hover:border-blue-700 transition-colors">
+    <Card className="border-2 border-dashed border-border hover:border-blue-300 dark:hover:border-blue-700 transition-colors duration-200 shadow-sm hover:shadow-md">
       <CardContent className="p-6">
         {file ? (
           <div className="flex items-center justify-between">
@@ -47,7 +47,7 @@ export function FileUploadCard({
           </div>
         ) : (
           <div className="text-center">
-            <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/50 rounded-lg flex items-center justify-center mx-auto mb-4">
+            <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/50 rounded-lg flex items-center justify-center mx-auto mb-4 transition-transform duration-200 hover:scale-105">
               <Upload className="w-6 h-6 text-blue-600 dark:text-blue-400" />
             </div>
             <h3 className="font-medium mb-2">{label}</h3>
@@ -63,7 +63,7 @@ export function FileUploadCard({
               id={`file-${type}`}
             />
             <Label htmlFor={`file-${type}`}>
-              <Button variant="outline" className="cursor-pointer" asChild>
+              <Button variant="outline" className="cursor-pointer transition-colors duration-200 hover:bg-blue-50 dark:hover:bg-blue-900/50" asChild>
                 <span>
                   <Upload className="w-4 h-4 mr-2" />
                   Choose File

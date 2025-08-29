@@ -38,7 +38,7 @@ export const EXPERIENCE_OPTIONS = [
   { value: '4-5', label: '4-5 years' },
   { value: '6-8', label: '6-8 years' },
   { value: '9-12', label: '9-12 years' },
-  { value: '13+', label: '13+ years' }
+  { value: '13+', label: '13+ years' },
 ];
 
 export const AVAILABILITY_OPTIONS = [
@@ -46,7 +46,7 @@ export const AVAILABILITY_OPTIONS = [
   { value: '2-weeks', label: '2 weeks notice' },
   { value: '1-month', label: '1 month notice' },
   { value: '2-months', label: '2 months notice' },
-  { value: '3-months', label: '3+ months' }
+  { value: '3-months', label: '3+ months' },
 ];
 
 export const INITIAL_APPLICATION_DATA: ApplicationData = {
@@ -57,24 +57,24 @@ export const INITIAL_APPLICATION_DATA: ApplicationData = {
     phone: '',
     location: '',
     portfolio: '',
-    linkedin: ''
+    linkedin: '',
   },
   experience: {
     currentRole: '',
     company: '',
     experience: '',
     salary: '',
-    availability: ''
+    availability: '',
   },
   documents: {},
   questions: {
     whyInterested: '',
     whyCompany: '',
-    experience: ''
+    experience: '',
   },
   preferences: {
     remote: false,
     relocation: false,
-    notifications: true
-  }
+    notifications: true,
+  },
 };

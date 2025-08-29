@@ -14,7 +14,7 @@ export function PersonalInfoStep({ data, onChange }: PersonalInfoStepProps) {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 max-w-2xl mx-auto p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md transition-all duration-300">
       <div className="flex items-center gap-3 mb-6">
         <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/50 rounded-lg flex items-center justify-center">
           <User className="w-5 h-5 text-blue-600 dark:text-blue-400" />
@@ -25,7 +25,7 @@ export function PersonalInfoStep({ data, onChange }: PersonalInfoStepProps) {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <Label htmlFor="firstName">First Name *</Label>
           <Input
@@ -33,6 +33,7 @@ export function PersonalInfoStep({ data, onChange }: PersonalInfoStepProps) {
             value={data.firstName}
             onChange={(e) => updateField('firstName', e.target.value)}
             placeholder="John"
+            className="mt-1"
           />
         </div>
         <div>
@@ -42,11 +43,12 @@ export function PersonalInfoStep({ data, onChange }: PersonalInfoStepProps) {
             value={data.lastName}
             onChange={(e) => updateField('lastName', e.target.value)}
             placeholder="Doe"
+            className="mt-1"
           />
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <Label htmlFor="email">Email Address *</Label>
           <Input
@@ -55,6 +57,7 @@ export function PersonalInfoStep({ data, onChange }: PersonalInfoStepProps) {
             value={data.email}
             onChange={(e) => updateField('email', e.target.value)}
             placeholder="john.doe@example.com"
+            className="mt-1"
           />
         </div>
         <div>
@@ -64,6 +67,7 @@ export function PersonalInfoStep({ data, onChange }: PersonalInfoStepProps) {
             value={data.phone}
             onChange={(e) => updateField('phone', e.target.value)}
             placeholder="+1 (555) 123-4567"
+            className="mt-1"
           />
         </div>
       </div>
@@ -75,10 +79,11 @@ export function PersonalInfoStep({ data, onChange }: PersonalInfoStepProps) {
           value={data.location}
           onChange={(e) => updateField('location', e.target.value)}
           placeholder="City, State, Country"
+          className="mt-1"
         />
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <Label htmlFor="portfolio">Portfolio URL</Label>
           <Input
@@ -86,6 +91,7 @@ export function PersonalInfoStep({ data, onChange }: PersonalInfoStepProps) {
             value={data.portfolio || ''}
             onChange={(e) => updateField('portfolio', e.target.value)}
             placeholder="https://yourportfolio.com"
+            className="mt-1"
           />
         </div>
         <div>
@@ -95,6 +101,7 @@ export function PersonalInfoStep({ data, onChange }: PersonalInfoStepProps) {
             value={data.linkedin || ''}
             onChange={(e) => updateField('linkedin', e.target.value)}
             placeholder="https://linkedin.com/in/johndoe"
+            className="mt-1"
           />
         </div>
       </div>

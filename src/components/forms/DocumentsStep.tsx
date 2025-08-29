@@ -10,7 +10,7 @@ interface DocumentsStepProps {
 
 export function DocumentsStep({ data, onFileUpload, onFileRemove }: DocumentsStepProps) {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 max-w-2xl mx-auto p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md transition-all duration-300">
       <div className="flex items-center gap-3 mb-6">
         <div className="w-10 h-10 bg-green-100 dark:bg-green-900/50 rounded-lg flex items-center justify-center">
           <FileText className="w-5 h-5 text-green-600 dark:text-green-400" />
